@@ -10,12 +10,13 @@ import MenuSection from './components/MenuSection'
 import Gallery from './components/Gallery'
 import Reviews from './components/Reviews'
 import Location from './components/Location'
-import Reservations from './components/Reservations'
 import Footer from './components/Footer'
 import MenuModal from './components/ui/MenuModal'
+import ReservationModal from './components/ReservationModal'
 
 export default function App() {
   const [isMenuModalOpen, setMenuModalOpen] = useState(false)
+  const [reservationOpen, setReservationOpen] = useState(false)
   const [introComplete, setIntroComplete] = useState(false)
 
   return (
@@ -42,11 +43,11 @@ export default function App() {
         }}
       />
 
-      <Navbar />
+      <Navbar onOpenReservation={() => setReservationOpen(true)} />
 
-      <main className="overflow-x-hidden w-full">
+      <main className="w-full" style={{ overflowX: 'clip' }}>
         <section id="inicio">
-          <Hero onOpenMenu={() => setMenuModalOpen(true)} />
+          <Hero onOpenMenu={() => setMenuModalOpen(true)} onOpenReservation={() => setReservationOpen(true)} />
         </section>
 
         <section id="a-casa">
@@ -69,9 +70,6 @@ export default function App() {
           <Location />
         </section>
 
-        <section id="reservas">
-          <Reservations />
-        </section>
       </main>
 
       <Footer />
@@ -79,6 +77,11 @@ export default function App() {
       <MenuModal
         isOpen={isMenuModalOpen}
         onClose={() => setMenuModalOpen(false)}
+      />
+
+      <ReservationModal
+        isOpen={reservationOpen}
+        onClose={() => setReservationOpen(false)}
       />
     </>
   )

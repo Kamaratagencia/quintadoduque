@@ -58,7 +58,7 @@ function TheForkBadge({ className, delay = 1.5, style: extraStyle }) {
   )
 }
 
-function HeroTextContent({ onOpenMenu, scrollToSection, isMobile }) {
+function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMobile }) {
   return (
     <>
       <motion.h1
@@ -93,7 +93,7 @@ function HeroTextContent({ onOpenMenu, scrollToSection, isMobile }) {
       >
         <button
           data-cursor="button"
-          onClick={() => scrollToSection('reservas')}
+          onClick={() => onOpenReservation?.()}
           className={`btn-primary cursor-none ${isMobile ? 'w-full justify-center' : ''}`}
         >
           <CalendarBlank size={18} weight="bold" />
@@ -112,7 +112,7 @@ function HeroTextContent({ onOpenMenu, scrollToSection, isMobile }) {
   )
 }
 
-export default function Hero({ onOpenMenu }) {
+export default function Hero({ onOpenMenu, onOpenReservation }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -413,7 +413,7 @@ export default function Hero({ onOpenMenu }) {
             >
               <button
                 data-cursor="button"
-                onClick={() => scrollToSection('reservas')}
+                onClick={() => onOpenReservation?.()}
                 className="btn-primary cursor-none"
               >
                 <CalendarBlank size={18} weight="bold" />
@@ -725,6 +725,7 @@ export default function Hero({ onOpenMenu }) {
           <div className="flex flex-col pt-6">
             <HeroTextContent
               onOpenMenu={onOpenMenu}
+              onOpenReservation={onOpenReservation}
               scrollToSection={scrollToSection}
               isMobile={true}
             />

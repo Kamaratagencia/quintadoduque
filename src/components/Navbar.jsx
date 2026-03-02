@@ -17,7 +17,6 @@ const NAV_LINKS = [
   { label: 'Galeria', href: '#galeria' },
   { label: 'Avaliacoes', href: '#avaliacoes' },
   { label: 'Localizacao', href: '#localizacao' },
-  { label: 'Reservas', href: '#reservas' },
 ]
 
 const EXPO_EASE = [0.32, 0.72, 0, 1]
@@ -237,7 +236,7 @@ function DrawerLink({ link, index, isActive, onNavigate }) {
   )
 }
 
-function MenuDrawer({ isOpen, onClose, activeSection, isMobile }) {
+function MenuDrawer({ isOpen, onClose, activeSection, isMobile, onOpenReservation }) {
   const scrollToSection = (href) => {
     onClose()
     const id = href.replace('#', '')
@@ -390,7 +389,7 @@ function MenuDrawer({ isOpen, onClose, activeSection, isMobile }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.4, ease: 'easeOut' }}
-                onClick={() => scrollToSection('#reservas')}
+                onClick={() => { onClose(); onOpenReservation?.() }}
                 data-cursor="button"
                 className="btn-primary"
                 style={{
@@ -462,7 +461,7 @@ function MenuDrawer({ isOpen, onClose, activeSection, isMobile }) {
   )
 }
 
-export default function Navbar() {
+export default function Navbar({ onOpenReservation }) {
   const { scrollY } = useNavbarScroll()
   const [navMode, setNavMode] = useState('top')
   const lastScrollY = useRef(0)
@@ -629,7 +628,7 @@ export default function Navbar() {
             <div style={{ marginLeft: 'auto', position: 'relative', zIndex: 2 }}>
               {isMobile ? (
                 <motion.button
-                  onClick={() => scrollToSection('#reservas')}
+                  onClick={() => onOpenReservation?.()}
                   data-cursor="button"
                   whileTap={{ scale: 0.92 }}
                   style={{
@@ -647,7 +646,7 @@ export default function Navbar() {
                 </motion.button>
               ) : (
                 <motion.button
-                  onClick={() => scrollToSection('#reservas')}
+                  onClick={() => onOpenReservation?.()}
                   data-cursor="button"
                   whileTap={{ scale: 0.96 }}
                   animate={{
@@ -690,6 +689,7 @@ export default function Navbar() {
         onClose={() => setMenuOpen(false)}
         activeSection={activeSection}
         isMobile={isMobile}
+        onOpenReservation={onOpenReservation}
       />
     </>
   )

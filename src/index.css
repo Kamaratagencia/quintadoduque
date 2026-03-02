@@ -13,7 +13,7 @@
   html {
     scroll-behavior: smooth;
     cursor: none !important;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
   }
 
@@ -21,7 +21,7 @@
     font-family: 'Inter', system-ui, sans-serif;
     color: #100502;
     background: #FFFFFF;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
