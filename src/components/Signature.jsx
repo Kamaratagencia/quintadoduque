@@ -44,7 +44,7 @@ const CARDS = [
   },
 ]
 
-const TITLE_WORDS = 'Tradicao que se sente a mesa'.split(' ')
+const TITLE_WORDS = 'Tradição que se sente à mesa'.split(' ')
 
 /* ═══════════════════════════════════════════════════
    MICRO-LABEL COM ORNAMENTOS
@@ -62,7 +62,7 @@ function OrnamentedLabel() {
         className="block h-[1px] bg-gold-deep/40"
       />
       <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-gold-deep font-medium whitespace-nowrap">
-        A Nossa Historia
+        A Nossa História
       </span>
       <motion.span
         initial={{ width: 0 }}

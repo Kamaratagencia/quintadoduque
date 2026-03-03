@@ -10,31 +10,31 @@ import theforkLogo from '../assets/logothefork.png'
 
 const testimonials = [
   {
-    text: 'Uma refeicao memoravel do inicio ao fim. O servico e impecavel, cada detalhe foi pensado para nos fazer sentir em casa. A vitela assada derretia no prato e o vinho do Douro que nos recomendaram foi a combinacao perfeita.',
+    text: 'Uma refeição memorável do início ao fim. O serviço é impecável, cada detalhe foi pensado para nos fazer sentir em casa. A vitela assada derretia no prato e o vinho do Douro que nos recomendaram foi a combinação perfeita.',
     name: 'Maria Fernandes',
     source: 'TheFork',
     date: 'Jan 2025',
   },
   {
-    text: 'O bacalhau com natas e simplesmente o melhor que ja provei em Portugal. A textura, o sabor, a apresentacao — tudo num nivel que raramente se encontra. Voltaremos sem duvida.',
+    text: 'O bacalhau com natas é simplesmente o melhor que já provei em Portugal. A textura, o sabor, a apresentação — tudo num nível que raramente se encontra. Voltaremos sem dúvida.',
     name: 'Joao Carvalho',
     source: 'TheFork',
     date: 'Dez 2024',
   },
   {
-    text: 'O espaco e deslumbrante, as paredes de pedra criam uma atmosfera unica e acolhedora. Fomos muito bem recebidos e cada prato superou as nossas expectativas. Uma verdadeira joia em Vila do Conde.',
+    text: 'O espaço é deslumbrante, as paredes de pedra criam uma atmosfera única e acolhedora. Fomos muito bem recebidos e cada prato superou as nossas expectativas. Uma verdadeira joia em Vila do Conde.',
     name: 'Ana Sofia Costa',
     source: 'Google',
     date: 'Nov 2024',
   },
   {
-    text: 'Fui celebrar o meu aniversario e nao podia ter escolhido melhor. O menu de degustacao e uma viagem pela gastronomia portuguesa, com toques contemporaneos que surpreendem. Atendimento de excelencia.',
+    text: 'Fui celebrar o meu aniversário e não podia ter escolhido melhor. O menu de degustação é uma viagem pela gastronomia portuguesa, com toques contemporâneos que surpreendem. Atendimento de excelência.',
     name: 'Ricardo Mendes',
     source: 'TheFork',
     date: 'Out 2024',
   },
   {
-    text: 'A adega e extraordinaria, o sommelier conhece cada garrafa como se fosse um filho. Recomendou-nos um vinho verde que transformou completamente a experiencia. Um restaurante que honra a tradicao.',
+    text: 'A adega é extraordinária, o sommelier conhece cada garrafa como se fosse um filho. Recomendou-nos um vinho verde que transformou completamente a experiência. Um restaurante que honra a tradição.',
     name: 'Teresa Almeida',
     source: 'Google',
     date: 'Set 2024',
@@ -112,8 +112,8 @@ export default function Reviews() {
       <div className="container-site">
         <AnimatedSection>
           <SectionTitle
-            microlabel="O que dizem de nos"
-            title="Experiencias que ficam"
+            microlabel="O que dizem de nós"
+            title="Experiências que ficam"
             centered
             light
           />
@@ -141,7 +141,7 @@ export default function Reviews() {
               <StarRating count={5} size={18} />
 
               <span className="font-sans text-[13px] text-gold-light/70 mt-2">
-                30 avaliacoes verificadas
+                30 avaliações verificadas
               </span>
 
               <span
@@ -263,7 +263,7 @@ export default function Reviews() {
             data-cursor="button"
             className="btn-outline border-gold-light text-gold-light hover:bg-gold-deep hover:border-gold-deep hover:text-white cursor-none"
           >
-            Ver todas as avaliacoes no TheFork
+            Ver todas as avaliações no TheFork
             <ArrowSquareOut size={18} weight="bold" />
           </a>
         </AnimatedSection>

@@ -5,9 +5,9 @@ import SectionTitle from './ui/SectionTitle'
 
 const schedule = [
   { day: 'Segunda a Sexta', hours: '12h00 - 15h00 | 19h00 - 22h30' },
-  { day: 'Sabado', hours: '12h00 - 15h30 | 19h00 - 23h00' },
+  { day: 'Sábado', hours: '12h00 - 15h30 | 19h00 - 23h00' },
   { day: 'Domingo', hours: '12h00 - 16h00 | Encerrado ao jantar' },
-  { day: 'Encerrado', hours: 'Terca-feira', closed: true },
+  { day: 'Encerrado', hours: 'Terça-feira', closed: true },
 ]
 
 function OpenBadge() {
@@ -82,7 +82,7 @@ export default function Location() {
         <AnimatedSection>
           <SectionTitle
             microlabel="Onde estamos"
-            title="Localizacao"
+            title="Localização"
             centered
           />
         </AnimatedSection>
@@ -139,7 +139,7 @@ export default function Location() {
                 <div className="flex items-center gap-3 mb-3">
                   <Clock size={28} weight="duotone" className="text-gold-deep" />
                   <h3 className="font-display text-[22px] font-semibold text-stone-darkest">
-                    Horario de Funcionamento
+                    Horário de Funcionamento
                   </h3>
                 </div>
 

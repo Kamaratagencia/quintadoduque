@@ -7,14 +7,21 @@
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
-    cursor: none !important;
   }
 
   html {
     scroll-behavior: smooth;
-    cursor: none !important;
     overflow-x: clip;
     max-width: 100vw;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+    html {
+      cursor: none !important;
+    }
   }
 
   body {

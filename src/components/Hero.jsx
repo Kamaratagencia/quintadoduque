@@ -80,8 +80,8 @@ function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMob
         animate="visible"
         className="font-sans text-[16px] md:text-[18px] text-beige max-w-[460px] leading-[1.7] mt-6"
       >
-        Cozinha portuguesa de alma. Vinhos da terra. Um espaco onde cada
-        refeicao se torna memoria para sempre.
+        Cozinha portuguesa de alma. Vinhos da terra. Um espaço onde cada
+        refeição se torna memória para sempre.
       </motion.p>
 
       <motion.div

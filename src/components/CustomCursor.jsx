@@ -24,12 +24,17 @@ export default function CustomCursor() {
   )
 
   useEffect(() => {
-    const isTouchDevice = window.matchMedia('(hover: none)').matches
-    setIsTouch(isTouchDevice)
-    if (isTouchDevice) return
+    const mq = window.matchMedia('(hover: none) and (pointer: coarse)')
+    const check = () => setIsTouch(mq.matches)
+    check()
+    mq.addEventListener('change', check)
+    if (mq.matches) return () => mq.removeEventListener('change', check)
 
     document.addEventListener('mousemove', onMouseMove)
-    return () => document.removeEventListener('mousemove', onMouseMove)
+    return () => {
+      mq.removeEventListener('change', check)
+      document.removeEventListener('mousemove', onMouseMove)
+    }
   }, [onMouseMove])
 
   useEffect(() => {

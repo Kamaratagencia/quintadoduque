@@ -9,6 +9,7 @@ import {
   Clock,
   Star,
 } from '@phosphor-icons/react'
+import logo from '../assets/logo.png'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -17,7 +18,6 @@ const navLinks = [
   { label: 'Galeria', href: '#galeria' },
   { label: 'Avaliacoes', href: '#avaliacoes' },
   { label: 'Localizacao', href: '#localizacao' },
-  { label: 'Reservas', href: '#reservas' },
 ]
 
 const socials = [
@@ -60,19 +60,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr] gap-12">
           <div>
             <img
-              src="/src/assets/logo.png"
+              src={logo}
               alt="Quinta do Duque"
               style={{ height: '68px', width: 'auto', objectFit: 'contain' }}
               className="brightness-90"
             />
 
             <p className="font-display italic text-[16px] text-gold-light/70 mt-4">
-              Tradicao portuguesa. Momentos unicos.
+              Tradição portuguesa. Momentos únicos.
             </p>
 
             <p className="font-sans text-[14px] text-beige/50 leading-[1.7] mt-3 max-w-[260px]">
-              Uma quinta com historia, uma cozinha com alma,
-              um espaco que ficara para sempre na sua memoria.
+              Uma quinta com história, uma cozinha com alma,
+              um espaço que ficará para sempre na sua memória.
             </p>
 
             <div className="flex items-center gap-3 mt-6">
@@ -107,7 +107,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-sans text-[11px] uppercase tracking-[0.15em] text-gold-deep font-medium mb-6">
-              Navegacao
+              Navegação
             </h4>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
@@ -175,12 +175,12 @@ export default function Footer() {
 
           <div>
             <h4 className="font-sans text-[11px] uppercase tracking-[0.15em] text-gold-deep font-medium mb-6">
-              Reserve ja
+              Reserve já
             </h4>
 
             <p className="font-sans text-[14px] text-beige/60 leading-[1.7] mb-5">
-              Reserve a sua mesa de forma rapida e simples,
-              diretamente no nosso WhatsApp ou formulario.
+              Reserve a sua mesa de forma rápida e simples,
+              diretamente no nosso WhatsApp ou formulário.
             </p>
 
             <a
@@ -195,13 +195,6 @@ export default function Footer() {
               WhatsApp
             </a>
 
-            <button
-              data-cursor="button"
-              onClick={() => scrollToSection('#reservas')}
-              className="btn-outline w-full justify-center mt-2 py-3 text-[13px] cursor-none"
-            >
-              Formulario Online
-            </button>
 
             <div
               className="flex items-center gap-2 mt-4 px-4 py-2.5 rounded-full"
@@ -236,7 +229,7 @@ export default function Footer() {
               data-cursor="button"
               className="font-sans text-[13px] text-beige/40 cursor-none hover:text-gold-medium transition-colors"
             >
-              Politica de Privacidade
+              Política de Privacidade
             </a>
             <span className="text-gold-deep/30">|</span>
             <a

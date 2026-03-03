@@ -15,8 +15,8 @@ const NAV_LINKS = [
   { label: 'A Casa', href: '#a-casa' },
   { label: 'Menu', href: '#menu' },
   { label: 'Galeria', href: '#galeria' },
-  { label: 'Avaliacoes', href: '#avaliacoes' },
-  { label: 'Localizacao', href: '#localizacao' },
+  { label: 'Avaliações', href: '#avaliacoes' },
+  { label: 'Localização', href: '#localizacao' },
 ]
 
 const EXPO_EASE = [0.32, 0.72, 0, 1]
@@ -253,6 +253,7 @@ function MenuDrawer({ isOpen, onClose, activeSection, isMobile, onOpenReservatio
       {isOpen && (
         <>
           <motion.div
+            key="drawer-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -264,11 +265,11 @@ function MenuDrawer({ isOpen, onClose, activeSection, isMobile, onOpenReservatio
               zIndex: 150,
               background: 'rgba(16,5,2,0.75)',
               backdropFilter: 'blur(4px)',
-              cursor: 'none',
             }}
           />
 
           <motion.div
+            key="drawer-panel"
             initial={isMobile ? { y: '100%' } : { x: -460 }}
             animate={isMobile ? { y: 0 } : { x: 0 }}
             exit={isMobile ? { y: '100%' } : { x: -460 }}
