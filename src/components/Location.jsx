@@ -4,10 +4,10 @@ import AnimatedSection from './ui/AnimatedSection'
 import SectionTitle from './ui/SectionTitle'
 
 const schedule = [
-  { day: 'Segunda a Sexta', hours: '12h00 - 15h00 | 19h00 - 22h30' },
-  { day: 'Sábado', hours: '12h00 - 15h30 | 19h00 - 23h00' },
-  { day: 'Domingo', hours: '12h00 - 16h00 | Encerrado ao jantar' },
-  { day: 'Encerrado', hours: 'Terça-feira', closed: true },
+  { day: 'Segunda e Terça', hours: 'Encerrado', closed: true },
+  { day: 'Quarta e Quinta', hours: '19h00 - 21h00 (jantar)' },
+  { day: 'Sexta', hours: '19h00 - 22h00 (jantar)' },
+  { day: 'Sábado e Domingo', hours: '12h00 - 16h45 (almoço) | 17h00 - 22h00 (jantar)' },
 ]
 
 function OpenBadge() {
@@ -16,37 +16,39 @@ function OpenBadge() {
   useEffect(() => {
     const checkOpen = () => {
       const now = new Date()
-      const day = now.getDay()
-      const hours = now.getHours()
-      const minutes = now.getMinutes()
-      const time = hours * 60 + minutes
+      const ptFormatter = new Intl.DateTimeFormat('pt-PT', {
+        timeZone: 'Europe/Lisbon',
+        hour: 'numeric',
+        minute: 'numeric',
+        weekday: 'short',
+        hour12: false,
+      })
+      const parts = ptFormatter.formatToParts(now)
+      const weekday = parts.find(p => p.type === 'weekday').value
+      const hour = parseInt(parts.find(p => p.type === 'hour').value, 10)
+      const minute = parseInt(parts.find(p => p.type === 'minute').value, 10)
+      const time = hour * 60 + minute
 
-      if (day === 2) {
+      // seg=segunda, ter=terça, qua=quarta, qui=quinta, sex=sexta, sáb=sábado, dom=domingo
+      const closed = weekday === 'seg' || weekday === 'ter'
+      if (closed) {
         setIsOpen(false)
         return
       }
 
-      const lunchStart = 12 * 60
-      const lunchEndWeekday = 15 * 60
-      const lunchEndSat = 15 * 60 + 30
-      const lunchEndSun = 16 * 60
-
-      const dinnerStart = 19 * 60
-      const dinnerEndWeekday = 22 * 60 + 30
-      const dinnerEndSat = 23 * 60
-
       let open = false
 
-      if (day === 0) {
-        open = time >= lunchStart && time <= lunchEndSun
-      } else if (day === 6) {
+      if (weekday === 'qua' || weekday === 'qui') {
+        // Quarta e Quinta: jantar 19h00–21h00
+        open = time >= 19 * 60 && time <= 21 * 60
+      } else if (weekday === 'sex') {
+        // Sexta: jantar 19h00–22h00
+        open = time >= 19 * 60 && time <= 22 * 60
+      } else if (weekday === 'sáb' || weekday === 'dom') {
+        // Sábado e Domingo: almoço 12h00–16h45 | jantar 17h00–22h00
         open =
-          (time >= lunchStart && time <= lunchEndSat) ||
-          (time >= dinnerStart && time <= dinnerEndSat)
-      } else if (day >= 1 && day <= 5) {
-        open =
-          (time >= lunchStart && time <= lunchEndWeekday) ||
-          (time >= dinnerStart && time <= dinnerEndWeekday)
+          (time >= 12 * 60 && time <= 16 * 60 + 45) ||
+          (time >= 17 * 60 && time <= 22 * 60)
       }
 
       setIsOpen(open)
