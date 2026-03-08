@@ -424,7 +424,7 @@ function MenuDrawer({ isOpen, onClose, activeSection, isMobile, onOpenReservatio
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 13,
                     color: 'rgba(219,189,126,0.5)',
-                  }}>+351 252 000 000</span>
+                  }}>+351 961 617 183</span>
                 </div>
                 <WhatsappLogo size={16} weight="duotone" color="#25D366" />
               </div>
