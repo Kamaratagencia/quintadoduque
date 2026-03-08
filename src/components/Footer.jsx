@@ -23,7 +23,7 @@ const navLinks = [
 const socials = [
   { icon: InstagramLogo, href: 'https://instagram.com', label: 'Instagram' },
   { icon: FacebookLogo, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: WhatsappLogo, href: 'https://wa.me/351252000000', label: 'WhatsApp' },
+  { icon: WhatsappLogo, href: 'https://wa.me/351961617183', label: 'WhatsApp' },
 ]
 
 const contacts = [
@@ -32,7 +32,7 @@ const contacts = [
     text: 'Largo da Igreja, Guilhabreu, 4480 Vila do Conde',
     href: 'https://www.google.com/maps/search/Largo+da+Igreja,+Guilhabreu,+Vila+do+Conde,+Portugal',
   },
-  { icon: Phone, text: '+351 252 000 000', href: 'tel:+351252000000' },
+  { icon: Phone, text: '+351 961 617 183', href: 'tel:+351961617183' },
   {
     icon: Envelope,
     text: 'reservas@quintaduduque.pt',
@@ -184,7 +184,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://wa.me/351252000000"
+              href="https://wa.me/351961617183"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="button"

@@ -156,7 +156,7 @@ export default function Reservations() {
           <AnimatedSection delay={0.15}>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-12">
               <a
-                href="https://wa.me/351252000000"
+                href="https://wa.me/351961617183"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="button"
@@ -173,14 +173,14 @@ export default function Reservations() {
               </a>
 
               <a
-                href="tel:+351252000000"
+                href="tel:+351961617183"
                 data-cursor="button"
                 className="flex items-center gap-3 px-7 py-4 rounded-xl cursor-none transition-all duration-300 glass-card hover:border-gold-deep/40"
               >
                 <Phone size={24} weight="duotone" className="text-gold-medium" />
                 <div>
                   <span className="block font-sans font-semibold text-[15px] text-white">
-                    +351 252 000 000
+                    +351 961 617 183
                   </span>
                   <span className="block font-sans text-[12px] text-beige/60">
                     Ligue diretamente

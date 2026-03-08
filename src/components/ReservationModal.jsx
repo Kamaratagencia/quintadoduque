@@ -8,7 +8,7 @@ import {
 } from '@phosphor-icons/react'
 import hero1 from '../assets/hero1.png'
 
-const WHATSAPP_NUMBER = '351252000000'
+const WHATSAPP_NUMBER = '351961617183'
 
 const INITIAL_FORM = {
   nome: '', email: '', telefone: '',

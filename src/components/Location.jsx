@@ -5,9 +5,7 @@ import SectionTitle from './ui/SectionTitle'
 
 const schedule = [
   { day: 'Segunda e Terça', hours: 'Encerrado', closed: true },
-  { day: 'Quarta e Quinta', hours: '19h00 - 21h00 (jantar)' },
-  { day: 'Sexta', hours: '19h00 - 22h00 (jantar)' },
-  { day: 'Sábado e Domingo', hours: '12h00 - 16h45 (almoço) | 17h00 - 22h00 (jantar)' },
+  { day: 'Quarta a Domingo', hours: '12h00 - 15h00 (almoço) | 19h00 - 23h00 (jantar)' },
 ]
 
 function OpenBadge() {
@@ -38,17 +36,11 @@ function OpenBadge() {
 
       let open = false
 
-      if (weekday === 'qua' || weekday === 'qui') {
-        // Quarta e Quinta: jantar 19h00–21h00
-        open = time >= 19 * 60 && time <= 21 * 60
-      } else if (weekday === 'sex') {
-        // Sexta: jantar 19h00–22h00
-        open = time >= 19 * 60 && time <= 22 * 60
-      } else if (weekday === 'sáb' || weekday === 'dom') {
-        // Sábado e Domingo: almoço 12h00–16h45 | jantar 17h00–22h00
+      if (weekday === 'qua' || weekday === 'qui' || weekday === 'sex' || weekday === 'sáb' || weekday === 'dom') {
+        // Quarta a Domingo: almoço 12h00–15h00 | jantar 19h00–23h00
         open =
-          (time >= 12 * 60 && time <= 16 * 60 + 45) ||
-          (time >= 17 * 60 && time <= 22 * 60)
+          (time >= 12 * 60 && time <= 15 * 60) ||
+          (time >= 19 * 60 && time <= 23 * 60)
       }
 
       setIsOpen(open)
@@ -188,11 +180,11 @@ export default function Location() {
 
                 <div className="ml-[40px] space-y-3">
                   <a
-                    href="tel:+351252000000"
+                    href="tel:+351961617183"
                     data-cursor="button"
                     className="block font-sans text-[15px] text-stone-warm cursor-none hover:text-gold-deep transition-colors"
                   >
-                    +351 252 000 000
+                    +351 961 617 183
                   </a>
 
                   <a
@@ -204,7 +196,7 @@ export default function Location() {
                   </a>
 
                   <a
-                    href="https://wa.me/351252000000"
+                    href="https://wa.me/351961617183"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="button"
