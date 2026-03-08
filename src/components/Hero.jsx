@@ -68,9 +68,9 @@ function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMob
         animate="visible"
         className="font-display font-bold text-white text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] max-w-[620px]"
       >
-        Uma Mesa no Cora&ccedil;&atilde;o
+Celebra&ccedil;&otilde;es que Ficam
         <br />
-        de <span className="gold-text">Portugal</span>
+        na <span className="gold-text">Mem&oacute;ria</span>
       </motion.h1>
 
       <motion.p
@@ -80,8 +80,8 @@ function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMob
         animate="visible"
         className="font-sans text-[16px] md:text-[18px] text-beige max-w-[460px] leading-[1.7] mt-6"
       >
-        Cozinha portuguesa de alma. Vinhos da terra. Um espaço onde cada
-        refeição se torna memória para sempre.
+        Casamentos, batizados, aniversários, comunhões e eventos especiais.
+        Um espaço único para os momentos mais importantes da sua vida.
       </motion.p>
 
       <motion.div
@@ -97,7 +97,7 @@ function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMob
           className={`btn-primary cursor-none ${isMobile ? 'w-full justify-center' : ''}`}
         >
           <CalendarBlank size={18} weight="bold" />
-          Reservar Mesa
+          Reservar
         </button>
         <button
           data-cursor="button"
@@ -105,7 +105,7 @@ function HeroTextContent({ onOpenMenu, onOpenReservation, scrollToSection, isMob
           className={`btn-outline border-white/60 text-white hover:bg-white hover:text-stone-darkest cursor-none ${isMobile ? 'w-full justify-center' : ''}`}
         >
           <BookOpenText size={18} weight="bold" />
-          Ver Menu
+          Conhecer o Espaço
         </button>
       </motion.div>
     </>
@@ -393,8 +393,8 @@ export default function Hero({ onOpenMenu, onOpenReservation }) {
                 marginTop: 24,
               }}
             >
-              Cozinha portuguesa de alma. Vinhos da terra. Um espa&ccedil;o onde cada
-              refei&ccedil;&atilde;o se torna mem&oacute;ria para sempre.
+              Casamentos, batizados, anivers&aacute;rios, comunh&otilde;es e eventos especiais.
+              Um espa&ccedil;o &uacute;nico para os momentos mais importantes da sua vida.
             </motion.p>
 
             {/* Grupo de botões */}
@@ -417,7 +417,7 @@ export default function Hero({ onOpenMenu, onOpenReservation }) {
                 className="btn-primary cursor-none"
               >
                 <CalendarBlank size={18} weight="bold" />
-                Reservar Mesa
+                Reservar
               </button>
               <motion.button
                 data-cursor="button"
@@ -427,7 +427,7 @@ export default function Hero({ onOpenMenu, onOpenReservation }) {
                 transition={{ duration: 0.2 }}
               >
                 <BookOpenText size={18} weight="bold" />
-                Ver Menu
+                Conhecer o Espaço
               </motion.button>
             </motion.div>
 

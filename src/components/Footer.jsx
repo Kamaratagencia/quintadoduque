@@ -38,7 +38,7 @@ const contacts = [
     text: 'reservas@quintaduduque.pt',
     href: 'mailto:reservas@quintaduduque.pt',
   },
-  { icon: Clock, text: 'Seg-Dom: 12h00-23h00', href: null },
+  { icon: Clock, text: 'Qua-Dom: 12h00-15h00 (Almoço) | 19h00-23h00 (Jantar)', href: null },
 ]
 
 function scrollToSection(href) {

@@ -8,6 +8,7 @@ import Hero from './components/Hero'
 import Signature from './components/Signature'
 import MenuSection from './components/MenuSection'
 import Gallery from './components/Gallery'
+import RealDishes from './components/RealDishes'
 import Reviews from './components/Reviews'
 import Location from './components/Location'
 import Footer from './components/Footer'
@@ -60,6 +61,10 @@ export default function App() {
 
         <section id="galeria">
           <Gallery />
+        </section>
+
+        <section id="pratos-reais">
+          <RealDishes />
         </section>
 
         <section id="avaliacoes">
